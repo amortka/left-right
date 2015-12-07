@@ -1,0 +1,138 @@
+$ionicons-font-path: "~ionic-sdk/release/fonts" !default;
+@import "~ionic-sdk/scss/ionic";
+// $color-left: #2196F3;
+// $color-right: #9b59b6;
+$color-left: #43cea2;
+$color-right: #185a9d;
+$color-left-light: #0ABFBC;
+$color-right-light: #FC354C;
+$color-left-dark: darken($color-left, 10%);
+$color-right-dark: darken($color-right, 10%);
+.card--full {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.main-header {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: block;
+  overflow: hidden;
+  //  background: -webkit-linear-gradient(to left, $color-right-light, $color-left-light); /* Chrome 10-25, Safari 5.1-6 */
+  //  background: linear-gradient(to left, $color-right-light, $color-left-light); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.main-header-side {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.button-lr {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  margin: 20px;
+  font-size: 2em;
+  color: #FFF;
+  border-width: 0;
+  &--left {
+    background-color: $color-left;
+    background: -webkit-radial-gradient($color-left 25%, $color-left-dark 100%);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: radial-gradient($color-left 25%, $color-left-dark 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    &:active {
+      background-color: $color-left-dark;
+    }
+  }
+  &--right {
+    background-color: $color-right;
+    background: -webkit-radial-gradient($color-right 25%, $color-right-dark 100%);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: radial-gradient($color-right 25%, $color-right-dark 100%);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    &:active {
+      background-color: $color-right-dark;
+    }
+  }
+}
+.button-lr:hover {
+  color: #FFF;
+}
+.button-lr:active {
+  transform: scale(0.9);
+}
+.button-lr--active {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+}
+.item-lr {
+  border: none;
+  font-size: 1.2em;
+  color: #fff;
+  overflow: visible;
+  z-index: initial;
+}
+.item-lr--left {
+  background: #d53369;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, $color-left-dark, $color-left);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, $color-left-dark, $color-left);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.item-lr--right {
+  background: #d53369;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, $color-right , $color-right-dark);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, $color-right , $color-right-dark);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.mark {
+  color: #FFF;
+  z-index: 1;
+  display: inline-block;
+  padding: 3px 8px;
+  min-width: 10px;
+  border-radius: 10px;
+  vertical-align: baseline;
+  text-align: center;
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+}
+.mark.mark-dark {
+  background-color: #444;
+}
+.mark.mark-red {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.item .mark--bottom {
+  position: absolute;
+  bottom: -12px;
+  z-index: 100;
+  right: 20px;
+}
+
+
+/* --- ANIMATION KEYFRAMES --- */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

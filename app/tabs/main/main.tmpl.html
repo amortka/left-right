@@ -1,0 +1,26 @@
+<ion-view view-title="Dashboard">
+  <ion-content>
+    <div class="card card--full">
+        <div class="main-header">
+          <div class="main-header-side">
+            <button ng-click="mainCtrl.add('left')" class=" button-lr button-lr--left" ng-class="{'button-lr--active': mainCtrl.active === 'left'}">L</button>
+          </div>
+          <div class="main-header-side">
+            <button ng-click="mainCtrl.add('right')" class=" button-lr button-lr--right" ng-class="{'button-lr--active': mainCtrl.active === 'right'}">R</button>
+          </div>
+        </div>
+    </div>
+    <ul class="list">
+      <li class="item item-lr" ng-class="{'item-lr--left': item.side === 'left', 'item-lr--right': item.side === 'right' }" ng-repeat="item in mainCtrl.list">
+        <span >@{{ item.timeStart | date:'HH:mm' }}</span>
+        <span ng-if="item.active">...</span>
+        <span ng-if="item.timeEnd">
+          - {{ item.timeEnd | date:'HH:mm' }}
+        </span>
+        <span class="mark mark-dark">{{ item.duration.minutes }} min. {{ item.duration.seconds }} sec.</span>
+
+        <span ng-if="item.diff" class="mark mark-red mark--bottom">44</span>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>
